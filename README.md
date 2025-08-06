@@ -1,5 +1,34 @@
-# PortfolioRP
-A portfolio worthy FiveM GTA Roleplay Server! This project is my attempt at learning FiveM Development!
+# PortfolioRP 🎮
+
+A portfolio-worthy FiveM GTA Roleplay Server showcasing modern FiveM development practices, resource integration, and server management skills.
+
+## 🎯 Project Status
+
+### ✅ Completed Features
+- **Core Server Setup**: FiveM server configured with latest GTA V build 3407 (Agents of Sabotage DLC)
+- **Voice System**: Integrated `pma-voice` 3D proximity voice chat with radio functionality
+- **Radio System**: Replaced incompatible `rp-radio` with `ac_radio` (pma-voice compatible)
+- **UI Framework**: Implemented `ox_lib` for modern, responsive UI components
+- **Roleplay Resources**:
+  - `dpemotes`: Comprehensive emote system with animations
+  - `mythic_notify`: Clean notification system
+  - `simple-admin`: Basic administration tools
+  - `SenkaWolf-RPCCPack`: RP chat and command pack
+- **Security**: Enhanced `.gitignore` to protect sensitive data (license keys, certificates, passwords)
+- **Documentation**: Created comprehensive guides for resources, testing, and voice setup
+
+### 🚧 In Progress
+- Custom vehicle system
+- Economy framework
+- Job system implementation
+- Player housing system
+
+### 📊 Technical Details
+- **FX Version**: `cerulean` (latest stable)
+- **Game Build**: `3407` (December 2024)
+- **OneSync**: Enabled (supports 32+ players)
+- **Voice System**: pma-voice with 3D spatial audio
+- **Max Players**: 32 (configurable)
 
 ## 🚀 Quick Start Guide
 
@@ -43,9 +72,19 @@ A portfolio worthy FiveM GTA Roleplay Server! This project is my attempt at lear
 ```
 PortfolioRP/
 ├── server/              # FiveM server files (download separately)
-├── resources/           # Custom resources and scripts
-├── server.cfg           # Server configuration
-├── start.bat            # Windows startup script
+│   └── resources/       # All server resources
+│       ├── ac_radio/    # PMA-Voice compatible radio system
+│       ├── dpemotes/    # Advanced emote system
+│       ├── mythic_notify/ # Notification framework
+│       ├── ox_lib/      # Modern UI library
+│       ├── pma-voice/   # 3D proximity voice chat
+│       ├── simple-admin/ # Admin commands
+│       └── [more...]    # Core FiveM resources
+├── server.cfg           # Server configuration (gitignored for security)
+├── start.bat            # Windows server launcher
+├── RESOURCES_INFO.md    # Detailed resource documentation
+├── TEST_CHECKLIST.md    # Testing procedures
+├── VOICE_GUIDE.md       # Voice system setup guide
 └── README.md            # This file
 ```
 
@@ -93,11 +132,27 @@ server_script 'server.lua'
 - `stop [resource]` - Stop a resource
 - `start [resource]` - Start a resource
 
-## 📚 Resources
+## 🎮 Available Commands
+
+### Player Commands
+- `/radio` - Open radio interface for voice communication
+- `/e [emote]` - Play emotes and animations
+- `/emotemenu` - Open emote menu interface
+
+### Admin Commands
+- `/kick [id] [reason]` - Kick a player
+- `/ban [id] [reason]` - Ban a player
+- `/announce [message]` - Server-wide announcement
+- `/teleport [id]` - Teleport to player
+- `/bring [id]` - Bring player to you
+
+## 📚 Resources & Documentation
 - [FiveM Documentation](https://docs.fivem.net)
 - [FiveM Forum](https://forum.cfx.re)
 - [FiveM Natives Reference](https://docs.fivem.net/natives/)
 - [Lua Documentation](https://www.lua.org/manual/5.4/)
+- [PMA-Voice Documentation](https://github.com/AvarianKnight/pma-voice)
+- [Ox Lib Documentation](https://overextended.dev/ox_lib)
 
 ## ⚠️ Important Notes
 - Never share your license key
@@ -105,5 +160,17 @@ server_script 'server.lua'
 - The `server/` folder is gitignored - each developer needs their own copy
 - Always test changes locally before deploying
 
+## 🏆 Skills Demonstrated
+
+This project showcases proficiency in:
+- **Server Administration**: FiveM server setup, configuration, and maintenance
+- **Resource Integration**: Successfully integrated multiple community resources
+- **Problem Solving**: Diagnosed and resolved voice system compatibility issues
+- **Version Control**: Proper Git usage with security considerations
+- **Documentation**: Clear, comprehensive technical documentation
+- **System Architecture**: Understanding of client-server architecture in gaming
+- **Lua Scripting**: Configuration and modification of Lua-based resources
+- **Security Practices**: Proper handling of sensitive configuration data
+
 ## 🤝 Contributing
-This is a learning project. Feel free to experiment and break things!
+This is a portfolio and learning project. Feel free to explore the code and suggest improvements!
