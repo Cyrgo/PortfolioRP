@@ -28,14 +28,19 @@ CitizenFX.log
 CitizenFX_log*
 
 # Configuration (keep template, ignore actual)
-# Uncomment if you want to track server.cfg
-# server.cfg
+# server.cfg contains license keys - NEVER commit this file
+server.cfg
 
 # License keys and sensitive data
 *.key
 *.pem
 *.cert
+*.crt
 sv_licensekey.txt
+rcon_password*
+server-tls.*
+*.p12
+*.pfx
 
 # Resources cache
 resources/\[cache\]/
@@ -119,4 +124,3 @@ citizen/
 
 # Monitor data
 monitor/
-server.cfg
