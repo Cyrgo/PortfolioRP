@@ -47,6 +47,30 @@ resources/\[cache\]/
 resources/\[local\]/
 resources/\[test\]/
 
+# Third-party QBCore resources (not tracking for now)
+server/resources/qb-*/
+server/resources/ox*/
+server/resources/PolyZone/
+server/resources/menuv/
+server/resources/pma-voice/
+server/resources/ac_radio/
+server/resources/dpemotes/
+server/resources/mythic_notify/
+server/resources/SenkaWolf-RPCCPack/
+server/resources/baseevents/
+server/resources/basic-gamemode/
+server/resources/chat/
+server/resources/hardcap/
+server/resources/mapmanager/
+server/resources/rconlog/
+server/resources/sessionmanager/
+server/resources/simple-admin/
+server/resources/simple-spawn/
+server/resources/spawnmanager/
+server/resources/webpack/
+server/resources/yarn/
+server/resources/*.zip
+
 # User uploaded content
 resources/*/stream/
 user_uploads/
