@@ -45,7 +45,7 @@ A portfolio-worthy FiveM GTA Roleplay Server showcasing modern FiveM development
 - **Game Build**: `3407` (December 2024 - Agents of Sabotage DLC)
 - **OneSync**: Enabled (supports 32+ players)
 - **Voice System**: pma-voice with 3D spatial audio + radio
-- **Inventory**: ox_inventory (drag & drop with metadata)
+- **Inventory**: ox_inventory (drag & drop with metadata) NOT TRUE ITS QB_INVENTORY
 - **Resources**: 25+ integrated RP resources
 
 ## 🚀 Quick Start Guide
@@ -227,4 +227,5 @@ This project showcases proficiency in:
 
 ## 🤝 Contributing
 This is a portfolio and learning project. Feel free to explore the code and suggest improvements!
+
 
