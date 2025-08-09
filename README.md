@@ -6,15 +6,15 @@ A portfolio-worthy FiveM GTA Roleplay Server showcasing modern FiveM development
 
 ### ✅ Completed Features
 - **🏗️ QBCore Framework**: Complete RP framework with multi-character support
-- **📦 Inventory System**: Official qb-inventory with full weapon support
-- **🎯 Interaction Systems**: qb-target, qb-menu for modern interactions  
-- **💰 Economy**: Banking, shops with working transactions
-- **👮 Essential Jobs**: Police, EMS, Mechanic, Taxi with full functionality
-- **🚗 Vehicle Systems**: Working lockpicking, hotwiring, and key management
+- **📦 Inventory System**: Official qb-inventory with full weapon support COULD BE BETTER
+- **🎯 Interaction Systems**: qb-target, qb-menu for modern interactions NOT TESTED  
+- **💰 Economy**: Banking, shops with working transactions BUGGY
+- **👮 Essential Jobs**: Police, EMS, Mechanic, Taxi with full functionality TODO
+- **🚗 Vehicle Systems**: Working lockpicking, hotwiring, and key management KEYS NOT MANAGED
 - **🛠️ Admin Tools**: Comprehensive admin menu, weather sync, scoreboard
-- **👔 Character Systems**: Advanced clothing and appearance customization
-- **🔊 Voice & Communication**: pma-voice 3D proximity voice with ac_radio
-- **🎭 Roleplay Resources**: Complete emote system (dpemotes), notifications, consumables
+- **👔 Character Systems**: Advanced clothing and appearance customization COULD BE IMPROVED
+- **🔊 Voice & Communication**: pma-voice 3D proximity voice with ac_radio NOT TESTED
+- **🎭 Roleplay Resources**: Complete emote system (dpemotes), notifications, consumables EMOTES WORK CONSUMABLED BUGGY
 - **🔐 Security**: Enhanced `.gitignore`, database protection, admin permissions
 - **📚 Documentation**: Complete setup guides and troubleshooting resources
 
@@ -227,3 +227,4 @@ This project showcases proficiency in:
 
 ## 🤝 Contributing
 This is a portfolio and learning project. Feel free to explore the code and suggest improvements!
+
