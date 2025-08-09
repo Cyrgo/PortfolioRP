@@ -3,41 +3,77 @@
 ## Prerequisites
 QBCore framework requires MySQL/MariaDB for player data storage.
 
-## 🚀 Quick Start: XAMPP (Easiest for Development)
+## 🚀 Quick Start Options (2025 Recommendations)
 
-### 1. Download & Install
-- Go to [XAMPP Download](https://www.apachefriends.org/download.html)
-- Download XAMPP for Windows
+### Option A: Laragon (⭐ Most Recommended)
+
+**Why Laragon?** Faster, lighter, and more beginner-friendly than XAMPP.
+
+#### 1. Download & Install
+- Go to [Laragon Download](https://laragon.org/download/)
+- Download "Laragon - Full" (includes MySQL, PHP, Apache)
 - Install with default settings
 
-### 2. Start MySQL
-- Open XAMPP Control Panel
-- Click "Start" next to MySQL
-- Should show "Running" in green
+#### 2. Start Services
+- Open Laragon
+- Click "Start All" (Apache + MySQL start automatically)
+- Services turn green when running
 
-### 3. Create Database
-- Click "Admin" next to MySQL (opens phpMyAdmin)
-- Click "New" on left sidebar
-- Database name: `qbcore_database`
-- Collation: `utf8mb4_general_ci`
-- Click "Create"
+#### 3. Install phpMyAdmin (Required First Time)
+Laragon doesn't include phpMyAdmin by default, so install it first:
+- Right-click Laragon tray icon → Tools → Quick add → phpMyAdmin
+- Wait for download to complete
+- **Restart Laragon completely** (quit and reopen)
+- Start all services again
 
-### 4. Update Server Config
-In your `server.cfg`, uncomment and update:
+#### 4. Create Database
+- Click "Database" button in Laragon main window
+- OR visit `http://localhost/phpmyadmin`
+- Login: Username `root`, Password: leave blank
+- Click "New" → Database name: `qbcore_database`
+- Collation: `utf8mb4_general_ci` → Create
+
+#### 5. Update Server Config
 ```cfg
 # Enable database
 ensure oxmysql
 
-# Set connection string (XAMPP default - no password)
+# Connection string (Laragon default - no password)
 set mysql_connection_string "mysql://root@localhost/qbcore_database?charset=utf8mb4"
 ```
 
-### 5. Start Server
-- Run `start.bat`
-- QBCore will auto-create all tables
-- Character data will now save properly
+### Option B: WampServer (Windows-Optimized)
 
-## Option 1: Full MySQL Installation (Alternative)
+#### 1. Download & Install
+- Go to [WampServer Download](https://wampserver.aviatechno.net/)
+- Download latest version for Windows
+- Install (may require Visual C++ redistributables)
+
+#### 2. Start Services
+- Click WampServer tray icon
+- Services show green when running
+- Click "phpMyAdmin" to access database
+
+#### 3. Create Database
+- Access phpMyAdmin from tray menu
+- Create new database: `qbcore_database`
+- Use same connection string as Laragon above
+
+### Option C: EasyPHP (Zero Configuration)
+
+Perfect if you want **zero setup hassle**:
+
+#### 1. Download & Install
+- Go to [EasyPHP Download](https://www.easyphp.org/)
+- Download "EasyPHP Devserver"
+- Install and auto-configures everything
+
+#### 2. Use Built-in Tools
+- Opens automatically with web interface
+- Database management included
+- Built-in tutorials for beginners
+
+## Alternative: Standalone MySQL Installation
 
 ### Windows (MySQL Installer)
 1. Download [MySQL Installer](https://dev.mysql.com/downloads/installer/)
@@ -53,7 +89,14 @@ set mysql_connection_string "mysql://root@localhost/qbcore_database?charset=utf8
    set mysql_connection_string "mysql://root:yourpassword@localhost/qbcore_database?charset=utf8mb4"
    ```
 
-## Option 2: Cloud Database (Production)
+## ❌ Why Not XAMPP in 2025?
+
+- **Resource Heavy**: Uses more RAM and CPU than alternatives
+- **Configuration Issues**: Frequent port conflicts and setup problems  
+- **Complex Setup**: Manual configuration can be confusing for beginners
+- **Outdated Interface**: Less user-friendly than modern alternatives
+
+## Cloud Database Options (Production)
 
 ### Recommended Providers
 - **Hostinger MySQL** - Affordable, reliable

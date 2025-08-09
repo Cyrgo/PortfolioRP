@@ -6,23 +6,37 @@ A portfolio-worthy FiveM GTA Roleplay Server showcasing modern FiveM development
 
 ### ✅ Completed Features
 - **🏗️ QBCore Framework**: Complete RP framework with multi-character support
-- **🎯 Advanced Systems**: ox_inventory, qb-target, qb-menu for modern interactions
-- **💰 Economy**: Banking, shops, realistic money management
+- **📦 Inventory System**: Official qb-inventory with full weapon support
+- **🎯 Interaction Systems**: qb-target, qb-menu for modern interactions  
+- **💰 Economy**: Banking, shops with working transactions
 - **👮 Essential Jobs**: Police, EMS, Mechanic, Taxi with full functionality
-- **🚗 Vehicle Systems**: Realistic keys, fuel, and vehicle management  
+- **🚗 Vehicle Systems**: Working lockpicking, hotwiring, and key management
 - **🛠️ Admin Tools**: Comprehensive admin menu, weather sync, scoreboard
 - **👔 Character Systems**: Advanced clothing and appearance customization
 - **🔊 Voice & Communication**: pma-voice 3D proximity voice with ac_radio
-- **🎭 Roleplay Resources**: Complete emote system, notifications, and RP utilities
+- **🎭 Roleplay Resources**: Complete emote system (dpemotes), notifications, consumables
 - **🔐 Security**: Enhanced `.gitignore`, database protection, admin permissions
 - **📚 Documentation**: Complete setup guides and troubleshooting resources
 
-### 🚧 Future Enhancements  
-- Player housing system (qb-houses)
-- Advanced phone system (lb-phone)
-- Gang territories and activities
-- Custom business management
-- Advanced crafting systems
+### 🔧 Recent Fixes & Improvements (December 2024)
+- **✅ Fixed instant death bug**: Players no longer die from fall damage during character selection
+- **✅ Fixed character deletion**: Added missing database tables for proper character cleanup
+- **✅ Fixed inventory system**: Properly configured qb-inventory with qb-weapons integration
+- **✅ Fixed melee weapons**: Bats and other melee weapons now work correctly
+- **✅ Fixed vehicle lockpicking**: Removed progressbar dependency, added proper animations
+- **✅ Fixed vehicle hotwiring**: Reduced time from 20-40s to 5-8s, increased success rate to 70%
+- **✅ Fixed consumables**: Joint smoking now uses dpemotes with visible prop
+- **✅ Added debug tools**: Custom commands for testing items and inventory
+- **✅ Database optimization**: Fixed table creation spam on server startup
+- **✅ Shop system**: Fixed integration with proper price handling
+
+### 🐛 Known Issues & TODO
+- **Progressbar System**: Need to add a progressbar resource (qb-progressbar or similar)
+- **Shop Prices**: Some items may show incorrect prices (debugging added)
+- **Missing Resources**: qb-apartments, qb-spawn need configuration
+- **Phone System**: No phone system currently installed
+- **Housing**: qb-houses not yet configured
+- **Minigames**: Need to add qb-skillbar or similar for lockpicking minigames
 
 ### 📊 Technical Details
 - **Framework**: QBCore (modern RP framework)
@@ -175,6 +189,15 @@ server_script 'server.lua'
 - `/bring [id]` - Bring player to you
 - `/weather [type]` - Change server weather
 - `/time [hour] [minute]` - Set server time
+
+### Debug Commands (Development)
+- `/debuggive [item] [amount]` - Give yourself any item with detailed logging
+- `/debuginv` - Check your inventory contents in console
+- `/givelockpick` - Quick command to give yourself a lockpick for testing
+- `/heal` - Heal yourself to full health
+- `/car [vehicle]` - Spawn a vehicle
+- `/fix` - Repair current vehicle
+- `/god` - Toggle god mode
 
 ## 📚 Resources & Documentation
 - [FiveM Documentation](https://docs.fivem.net)
