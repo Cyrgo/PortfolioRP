@@ -5,30 +5,34 @@ A portfolio-worthy FiveM GTA Roleplay Server showcasing modern FiveM development
 ## 🎯 Project Status
 
 ### ✅ Completed Features
-- **Core Server Setup**: FiveM server configured with latest GTA V build 3407 (Agents of Sabotage DLC)
-- **Voice System**: Integrated `pma-voice` 3D proximity voice chat with radio functionality
-- **Radio System**: Replaced incompatible `rp-radio` with `ac_radio` (pma-voice compatible)
-- **UI Framework**: Implemented `ox_lib` for modern, responsive UI components
-- **Roleplay Resources**:
-  - `dpemotes`: Comprehensive emote system with animations
-  - `mythic_notify`: Clean notification system
-  - `simple-admin`: Basic administration tools
-  - `SenkaWolf-RPCCPack`: RP chat and command pack
-- **Security**: Enhanced `.gitignore` to protect sensitive data (license keys, certificates, passwords)
-- **Documentation**: Created comprehensive guides for resources, testing, and voice setup
+- **🏗️ QBCore Framework**: Complete RP framework with multi-character support
+- **🎯 Advanced Systems**: ox_inventory, qb-target, qb-menu for modern interactions
+- **💰 Economy**: Banking, shops, realistic money management
+- **👮 Essential Jobs**: Police, EMS, Mechanic, Taxi with full functionality
+- **🚗 Vehicle Systems**: Realistic keys, fuel, and vehicle management  
+- **🛠️ Admin Tools**: Comprehensive admin menu, weather sync, scoreboard
+- **👔 Character Systems**: Advanced clothing and appearance customization
+- **🔊 Voice & Communication**: pma-voice 3D proximity voice with ac_radio
+- **🎭 Roleplay Resources**: Complete emote system, notifications, and RP utilities
+- **🔐 Security**: Enhanced `.gitignore`, database protection, admin permissions
+- **📚 Documentation**: Complete setup guides and troubleshooting resources
 
-### 🚧 In Progress
-- Custom vehicle system
-- Economy framework
-- Job system implementation
-- Player housing system
+### 🚧 Future Enhancements  
+- Player housing system (qb-houses)
+- Advanced phone system (lb-phone)
+- Gang territories and activities
+- Custom business management
+- Advanced crafting systems
 
 ### 📊 Technical Details
+- **Framework**: QBCore (modern RP framework)
+- **Database**: MySQL with oxmysql integration
 - **FX Version**: `cerulean` (latest stable)
-- **Game Build**: `3407` (December 2024)
+- **Game Build**: `3407` (December 2024 - Agents of Sabotage DLC)
 - **OneSync**: Enabled (supports 32+ players)
-- **Voice System**: pma-voice with 3D spatial audio
-- **Max Players**: 32 (configurable)
+- **Voice System**: pma-voice with 3D spatial audio + radio
+- **Inventory**: ox_inventory (drag & drop with metadata)
+- **Resources**: 25+ integrated RP resources
 
 ## 🚀 Quick Start Guide
 
@@ -73,18 +77,35 @@ A portfolio-worthy FiveM GTA Roleplay Server showcasing modern FiveM development
 PortfolioRP/
 ├── server/              # FiveM server files (download separately)
 │   └── resources/       # All server resources
-│       ├── ac_radio/    # PMA-Voice compatible radio system
-│       ├── dpemotes/    # Advanced emote system
-│       ├── mythic_notify/ # Notification framework
+│       ├── oxmysql/     # Database integration
 │       ├── ox_lib/      # Modern UI library
+│       ├── ox_inventory/ # Advanced inventory system
+│       ├── qb-core/     # QBCore framework foundation
+│       ├── qb-target/   # Interaction system
+│       ├── qb-menu/     # Menu system
+│       ├── qb-banking/  # Banking system
+│       ├── qb-shops/    # Shop system
+│       ├── qb-policejob/ # Police job system
+│       ├── qb-ambulancejob/ # EMS job system
+│       ├── qb-mechanicjob/ # Mechanic job system
+│       ├── qb-vehiclekeys/ # Vehicle key system
+│       ├── qb-fuel/     # Fuel system
+│       ├── qb-adminmenu/ # Admin tools
 │       ├── pma-voice/   # 3D proximity voice chat
-│       ├── simple-admin/ # Admin commands
-│       └── [more...]    # Core FiveM resources
+│       ├── ac_radio/    # Radio communication
+│       └── [15+ more]   # Additional RP resources
+├── docs/                # Documentation files
+│   ├── DATABASE_SETUP.md    # MySQL setup instructions
+│   ├── MYSQL_WORKBENCH_SETUP.md # MySQL Workbench guide
+│   ├── QBCORE_SETUP.md      # Complete QBCore guide
+│   ├── QUICK_MYSQL_SETUP.md # Quick MySQL setup
+│   ├── RESOURCES_INFO.md    # Resource documentation
+│   ├── SQLITE_DEV.md        # SQLite development guide
+│   ├── TEST_CHECKLIST.md    # Testing procedures
+│   └── VOICE_GUIDE.md       # Voice system setup guide
 ├── server.cfg           # Server configuration (gitignored for security)
 ├── start.bat            # Windows server launcher
-├── RESOURCES_INFO.md    # Detailed resource documentation
-├── TEST_CHECKLIST.md    # Testing procedures
-├── VOICE_GUIDE.md       # Voice system setup guide
+├── CLAUDE.md            # AI assistant guidance
 └── README.md            # This file
 ```
 
@@ -136,15 +157,24 @@ server_script 'server.lua'
 
 ### Player Commands
 - `/radio` - Open radio interface for voice communication
-- `/e [emote]` - Play emotes and animations
+- `/e [emote]` - Play emotes and animations  
 - `/emotemenu` - Open emote menu interface
+- `/inventory` - Open advanced drag & drop inventory
+- `/bank` - Access banking interface
+- `/clothing` - Visit clothing stores
+- `/duty` - Go on/off duty for jobs
+- `/fuel` - Refuel vehicle at gas stations
 
 ### Admin Commands
+- `/admin` - Open comprehensive admin menu
+- `/noclip` - Toggle noclip mode
 - `/kick [id] [reason]` - Kick a player
 - `/ban [id] [reason]` - Ban a player
 - `/announce [message]` - Server-wide announcement
-- `/teleport [id]` - Teleport to player
+- `/tp [id]` - Teleport to player
 - `/bring [id]` - Bring player to you
+- `/weather [type]` - Change server weather
+- `/time [hour] [minute]` - Set server time
 
 ## 📚 Resources & Documentation
 - [FiveM Documentation](https://docs.fivem.net)
