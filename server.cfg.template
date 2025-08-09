@@ -1,0 +1,171 @@
+# PortfolioRP Server Configuration
+# This is the main configuration file for your FiveM server
+
+# Network configuration
+endpoint_add_tcp "0.0.0.0:30120"
+endpoint_add_udp "0.0.0.0:30120"
+
+# License key from https://keymaster.fivem.net
+# IMPORTANT: Get a new key from keymaster.fivem.net and replace YOUR_NEW_LICENSE_KEY
+# Never commit your real license key to version control!
+sv_licenseKey "YOUR_NEW_LICENSE_KEY_HERE"
+
+# Server identification
+sv_hostname "PortfolioRP - Learning FiveM Development"
+sets sv_projectName "PortfolioRP"
+sets sv_projectDesc "A portfolio-worthy FiveM GTA Roleplay Server"
+sets tags "roleplay, development, learning, custom"
+
+# Server settings
+sv_maxclients 32                    # Maximum players
+sv_scriptHookAllowed 0              # Disable script hook for security
+sv_endpointprivacy true             # Hide player IP addresses
+
+# Database Configuration (MySQL Required)
+# See docs/DATABASE_SETUP.md for setup instructions
+# MySQL is now configured and ready:
+set mysql_connection_string "mysql://root@localhost/qbcore_database?charset=utf8mb4"
+# set mysql_debug true  # Enable for troubleshooting
+set mysql_slow_query_warning 150
+
+# Inventory Configuration  
+set inventory:framework "esx"       # Use ESX bridge (most compatible with QBCore)
+set inventory:target 0              # Disable ox_target for now
+
+# Database & Core Dependencies (MUST be first!)
+ensure oxmysql              # MySQL connector - now enabled!
+ensure ox_lib               # Overextended library framework
+ensure ox_target            # Advanced targeting system (required for ox_inventory)
+
+# Additional Dependencies (temporarily disabled for testing)
+# ensure PolyZone             # Zone management system
+# ensure menuv                # Menu system for admin menu
+
+# QBCore Framework (Load in this specific order!)
+ensure qb-core              # Main QBCore framework
+ensure qb-weapons           # QBCore weapons system (required by qb-inventory)
+ensure qb-inventory         # Official QBCore inventory system (MUST load before other QB resources)
+ensure inventory-debug      # Debug inventory issues - REMOVE AFTER FIXING
+ensure fix-deletion         # Create missing tables - REMOVE AFTER FIXING
+ensure db-check             # Check database tables - REMOVE AFTER FIXING  
+ensure spawn-debug          # Debug health issues - REMOVE AFTER FIXING
+ensure qb-multicharacter    # Multi-character system
+ensure qb-spawn             # Spawn selection
+ensure qb-target            # Advanced interaction system (replaces E key)  
+ensure qb-menu              # Menu UI system
+
+# Economy & Shopping Systems
+ensure qb-banking           # Banking system with ATMs and transfers
+ensure qb-shops             # Configurable shops and markets
+ensure qb-smallresources    # Essential utilities (HUD, commands, etc.)
+
+# Essential RP Jobs
+ensure qb-policejob         # Complete police system with MDT
+ensure qb-ambulancejob      # EMS/medical system with injuries
+ensure qb-mechanicjob       # Vehicle repair and customization
+ensure qb-taxijob           # Taxi/Uber style transportation
+
+# Vehicle Systems
+ensure qb-vehiclekeys       # Realistic vehicle key system
+ensure qb-fuel              # Realistic fuel consumption
+ensure qb-vehicleshop       # Car dealership system
+
+# Admin Tools & Quality of Life
+# ensure qb-adminmenu         # Disabled temporarily to test white screen fix
+ensure qb-weathersync       # Synchronized weather system
+ensure qb-scoreboard        # Player list with server info
+
+# Character Customization & Housing
+ensure qb-clothing          # Advanced clothing shops
+# ensure qb-apartments        # Starter apartment system (requires qb-interior)
+
+# Core FiveM Resources 
+ensure yarn
+ensure webpack
+ensure mapmanager
+ensure spawnmanager
+ensure baseevents
+ensure sessionmanager
+ensure hardcap
+ensure rconlog
+ensure chat
+
+# Voice System
+ensure pma-voice            # Advanced 3D voice system for RP
+
+# RP Resources
+ensure SenkaWolf-RPCCPack  # RP Chat & Command Pack
+ensure mythic_notify        # Notification system
+ensure simple-admin         # Simple admin commands
+ensure dpemotes             # Emote system
+ensure ac_radio             # Radio system (pma-voice compatible)
+
+# Admin setup
+add_ace group.admin command allow           # Allow all commands for admin group
+add_ace group.admin command.quit deny       # Prevent accidental server shutdown
+# add_principal identifier.fivem:1 group.admin  # Add your FiveM ID here
+add_principal identifier.steam:* group.admin     # Gives admin to all Steam users (for testing)
+add_principal identifier.license:* group.admin   # Gives admin to all license users (for testing)
+
+# RCON password (change this!)
+rcon_password "CHANGE_THIS_PASSWORD"
+
+# Game build (current stable as of 2025)
+sv_enforceGameBuild 3407
+
+# Locale
+sets locale "en-US"
+
+# OneSync (allows more than 32 players)
+set onesync on
+
+# Server icon (96x96 PNG) - optional
+# load_server_icon server-icon.png
+
+# Connection queue settings
+set sv_connectTimeout 120
+set net_maxPackets 50
+
+# Database configuration (uncomment and configure if using MySQL)
+# set mysql_connection_string "mysql://username:password@localhost/database_name?charset=utf8mb4"
+
+# Steam Web API key (optional, for Steam authentication)
+# set steam_webApiKey "YOUR_STEAM_API_KEY"
+
+# Discord Rich Presence (optional)
+# set discord_richPresence "YOUR_DISCORD_APP_ID"
+
+# Server banner (optional)
+# sets banner_detail "https://url/to/banner.png"
+# sets banner_connecting "https://url/to/banner.png"
+
+# Development settings
+sv_lan 0                            # Set to 1 for LAN-only during development
+sv_licenseKeyToken ""               # Leave empty unless using token-based licensing
+
+# Logging
+set sv_logfile "1"                  # Enable server log file
+set sv_logfile_format "%Y-%m-%d"    # Log file date format
+
+# Voice chat - pma-voice configuration
+setr voice_useNativeAudio true
+setr voice_useSendingRangeOnly true
+setr voice_defaultCycle "N"
+setr voice_defaultVolume 0.3
+setr voice_enableRadioAnim 1
+setr voice_syncData 1
+
+# pma-voice settings
+setr voice_use3dAudio true
+setr voice_use2dAudio false
+
+# PLD (Player Location Display) - for development
+# sv_enablePld 1                    # This command doesn't exist in FiveM
+
+# This configuration provides a solid foundation for your FiveM server.
+# Remember to:
+# 1. Get your license key from https://keymaster.fivem.net
+# 2. Update the sv_licenseKey value
+# 3. Change the rcon_password
+# 4. Add your FiveM identifier as admin
+# 5. Download server files from https://runtime.fivem.net/artifacts/fivem/build_server_windows/master/
